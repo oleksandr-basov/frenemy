@@ -1,0 +1,274 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "frenemy:shade",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "shade:tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:persistent": {}
+      },
+      "shade:reverting_friend": {
+        "minecraft:is_shaking": {},
+        "minecraft:transformation": {
+          "into": "frenemy:friend",
+          "keep_owner": true,
+          "delay": {
+            "value": 2.2
+          },
+          "begin_transform_sound": "friend.transform_calm"
+        }
+      },
+      "shade:reverting_monster": {
+        "minecraft:is_shaking": {},
+        "minecraft:transformation": {
+          "into": "frenemy:monster",
+          "keep_owner": true,
+          "delay": {
+            "value": 2.2
+          },
+          "begin_transform_sound": "friend.transform_calm"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "frenemy_shade"
+        ]
+      },
+      "minecraft:health": {
+        "value": 80,
+        "max": 80
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "entity_attack",
+            "deals_damage": "no",
+            "on_damage": {
+              "event": "shade:hurt_voice"
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": "no"
+          }
+        ]
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.1
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:can_fly": {},
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:flying_speed": {
+        "value": 0.32
+      },
+      "minecraft:movement.hover": {},
+      "minecraft:navigation.hover": {
+        "can_path_over_water": true,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:follow_range": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "must_see": false,
+        "reselect_targets": true,
+        "attack_owner": true,
+        "within_radius": 36.0,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 36
+          }
+        ]
+      },
+      "minecraft:behavior.melee_box_attack": {
+        "priority": 2
+      },
+      "minecraft:behavior.follow_mob": {
+        "priority": 3,
+        "speed_multiplier": 1.5,
+        "search_range": 36,
+        "stop_distance": 0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "player"
+        }
+      },
+      "minecraft:area_attack": {
+        "cause": "contact",
+        "damage_range": 1.4,
+        "damage_per_tick": 2,
+        "damage_cooldown": 0.9,
+        "entity_filter": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "player"
+        }
+      },
+      "minecraft:behavior.float": {
+        "priority": 7
+      },
+      "minecraft:behavior.random_hover": {
+        "priority": 9,
+        "xz_dist": 6,
+        "y_dist": 3,
+        "y_offset": 0,
+        "interval": 1,
+        "hover_height": [
+          2,
+          5
+        ]
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": [
+          45.0,
+          45.0
+        ],
+        "time_down_event": {
+          "event": "shade:burn_out"
+        }
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:nameable": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "action.interact.shade.bloom",
+            "use_item": true,
+            "swing": true,
+            "play_sounds": "chime.amethyst_block",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "poppy"
+                  },
+                  {
+                    "test": "has_component",
+                    "operator": "not",
+                    "value": "minecraft:is_shaking"
+                  }
+                ]
+              },
+              "event": "shade:bloom",
+              "target": "self"
+            }
+          },
+          {
+            "interact_text": "action.interact.shade.bloom",
+            "use_item": true,
+            "swing": true,
+            "play_sounds": "chime.amethyst_block",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "dandelion"
+                  },
+                  {
+                    "test": "has_component",
+                    "operator": "not",
+                    "value": "minecraft:is_shaking"
+                  }
+                ]
+              },
+              "event": "shade:bloom",
+              "target": "self"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "shade:hurt_voice": {
+        "queue_command": {
+          "command": [
+            "scriptevent frenemy:hurt"
+          ]
+        }
+      },
+      "shade:bloom": {
+        "add": {
+          "component_groups": [
+            "shade:reverting_friend"
+          ]
+        }
+      },
+      "shade:burn_out": {
+        "add": {
+          "component_groups": [
+            "shade:reverting_monster"
+          ]
+        }
+      },
+      "minecraft:entity_transformed": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "has_component",
+              "subject": "other",
+              "value": "minecraft:is_tamed"
+            },
+            "add": {
+              "component_groups": [
+                "shade:tamed"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

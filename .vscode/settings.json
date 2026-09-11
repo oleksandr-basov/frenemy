@@ -1,0 +1,19 @@
+{
+  "files.associations": {
+    "*.geo.json": "json",
+    "*.entity.json": "json",
+    "*.animation.json": "json"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "[python]": { "editor.tabSize": 4 },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "out": true
+  },
+  "search.exclude": {
+    "dist": true,
+    "art/preview": true
+  }
+}

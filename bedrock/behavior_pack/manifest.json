@@ -1,0 +1,60 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Frenemy (поведінка)",
+    "description": "Логіка супутника та його перетворення. Ідея: Басов Данило",
+    "uuid": "8e2f3ff2-73f3-41d8-bded-ce38f7163c81",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "074d2b04-1b8f-40b4-a986-2b337e6d5960",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "14262c90-5d89-4185-aa4c-16239cc3f4c0",
+      "entry": "scripts/main.js",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "de161483-0b8e-41ad-8dd6-d48f3bab00c7",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "Басов Данило",
+      "Oleksandr Basov"
+    ]
+  }
+}

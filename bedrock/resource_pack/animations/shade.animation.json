@@ -1,0 +1,59 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.shade.idle": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "position": [
+            0,
+            "1.4 * math.sin(query.life_time * 80.0)",
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            "3.0 * math.sin(query.life_time * 55.0)"
+          ]
+        },
+        "shard1": {
+          "rotation": [
+            0,
+            "query.life_time * 240.0",
+            0
+          ]
+        },
+        "shard2": {
+          "rotation": [
+            0,
+            "query.life_time * -180.0",
+            0
+          ]
+        },
+        "shard3": {
+          "rotation": [
+            "query.life_time * 60.0",
+            "query.life_time * 300.0",
+            0
+          ]
+        },
+        "shard4": {
+          "rotation": [
+            0,
+            "query.life_time * -260.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.shade.trail": {
+      "loop": true,
+      "animation_length": 0.5,
+      "particle_effects": {
+        "0.0": {
+          "effect": "soul"
+        }
+      }
+    }
+  }
+}

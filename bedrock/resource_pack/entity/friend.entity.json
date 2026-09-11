@@ -1,0 +1,58 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "frenemy:friend",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "day": "textures/entity/friend_day",
+        "night": "textures/entity/friend_night"
+      },
+      "geometry": {
+        "default": "geometry.friend"
+      },
+      "particle_effects": {
+        "hearts": "minecraft:heart_particle"
+      },
+      "sound_effects": {
+        "tame_song": "friend.tame",
+        "giggle_sound": "friend.giggle"
+      },
+      "animations": {
+        "idle": "animation.friend.idle",
+        "sulk": "animation.friend.sulk",
+        "sulk_controller": "controller.animation.friend.sulk",
+        "celebrate": "animation.friend.celebrate",
+        "celebrate_controller": "controller.animation.friend.celebrate",
+        "giggle": "animation.friend.giggle",
+        "giggle_controller": "controller.animation.friend.giggle"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.face_hurt = query.timer_flag_2;",
+          "variable.face_blink = !variable.face_hurt && (math.mod(query.life_time, 4.7) < 0.13 || math.mod(query.life_time, 7.9) < 0.13);",
+          "variable.breathe = 1.0 + 0.03 * math.sin(query.life_time * (query.variant == 1 ? 55.0 : 90.0));",
+          "variable.bob = 1.0 * math.sin(query.life_time * 63.0);",
+          "variable.sway = 2.5 * math.sin(query.life_time * 41.0);",
+          "variable.lean = math.clamp(query.modified_move_speed * 25.0, 0.0, 14.0);"
+        ],
+        "animate": [
+          "idle",
+          "sulk_controller",
+          "celebrate_controller",
+          "giggle_controller"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.friend",
+        "controller.render.friend_face"
+      ],
+      "spawn_egg": {
+        "base_color": "#ffffff",
+        "overlay_color": "#8c1c3c"
+      }
+    }
+  }
+}

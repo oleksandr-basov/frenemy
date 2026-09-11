@@ -1,0 +1,90 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.monster": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "part_visibility": [
+        {
+          "*": true
+        },
+        {
+          "eyes_open": false
+        },
+        {
+          "eyes_closed": false
+        },
+        {
+          "eyes_worried": false
+        },
+        {
+          "brows": false
+        },
+        {
+          "mouth_line": false
+        },
+        {
+          "mouth_open": false
+        }
+      ],
+      "textures": [
+        "Array.skins[query.variant]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.default",
+            "Texture.angry"
+          ]
+        }
+      }
+    },
+    "controller.render.monster_face": {
+      "geometry": "Geometry.default",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "ignore_lighting": true,
+      "part_visibility": [
+        {
+          "*": false
+        },
+        {
+          "eyes_open": "!v.born && !v.face_hurt && !v.face_blink"
+        },
+        {
+          "eyes_closed": "!v.born && !v.face_hurt && v.face_blink"
+        },
+        {
+          "eyes_worried": "!v.born && v.face_hurt"
+        },
+        {
+          "brows": "!v.born && v.face_hurt"
+        },
+        {
+          "mouth_line": "!v.born && !v.face_hurt"
+        },
+        {
+          "mouth_open": "!v.born && v.face_hurt"
+        }
+      ],
+      "textures": [
+        "Array.skins[query.variant]"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.default",
+            "Texture.angry"
+          ]
+        }
+      }
+    }
+  }
+}

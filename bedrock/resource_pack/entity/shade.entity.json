@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "frenemy:shade",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/friend_shade",
+        "angry": "textures/entity/friend_shade"
+      },
+      "geometry": {
+        "default": "geometry.friend_shade"
+      },
+      "particle_effects": {
+        "soul": "minecraft:sculk_soul_particle"
+      },
+      "animations": {
+        "idle": "animation.shade.idle",
+        "trail": "animation.shade.trail"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.face_hurt = query.timer_flag_2;",
+          "variable.face_blink = !variable.face_hurt && (math.mod(query.life_time, 4.7) < 0.13 || math.mod(query.life_time, 7.9) < 0.13);",
+          "variable.born = 0.0;"
+        ],
+        "animate": [
+          "idle",
+          "trail"
+        ],
+        "should_update_effects_offscreen": "1.0"
+      },
+      "render_controllers": [
+        "controller.render.monster",
+        "controller.render.monster_face"
+      ]
+    }
+  }
+}
