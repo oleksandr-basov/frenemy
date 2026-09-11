@@ -1,0 +1,57 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "frenemy:friend": {
+        "volume": 1.8,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "friend.hello",
+          "mad": "friend.dark"
+        }
+      },
+      "frenemy:monster": {
+        "volume": 1.8,
+        "pitch": [
+          0.95,
+          1.05
+        ],
+        "events": {
+          "ambient": "monster.calm",
+          "mad": "monster.rage"
+        }
+      }
+    }
+  },
+  "individual_event_sounds": {
+    "events": {
+      "friend_ouch": {
+        "sound": "friend.ouch",
+        "volume": 1.6,
+        "pitch": 1.0
+      },
+      "monster_ouch": {
+        "sound": "monster.ouch",
+        "volume": 1.6,
+        "pitch": 1.0
+      },
+      "friend.transform_rise": {
+        "sound": "friend.transform_rise",
+        "volume": 1.8,
+        "pitch": 1.0
+      },
+      "friend.transform_calm": {
+        "sound": "friend.transform_calm",
+        "volume": 1.8,
+        "pitch": 1.0
+      },
+      "friend.transform": {
+        "sound": "friend.transform",
+        "volume": 1.8,
+        "pitch": 1.0
+      }
+    }
+  }
+}

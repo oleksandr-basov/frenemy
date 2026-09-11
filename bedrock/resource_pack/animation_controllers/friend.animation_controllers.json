@@ -1,0 +1,73 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.friend.giggle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "giggle": "query.timer_flag_3"
+            }
+          ]
+        },
+        "giggle": {
+          "animations": [
+            "giggle"
+          ],
+          "transitions": [
+            {
+              "default": "!query.timer_flag_3"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.friend.sulk": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "sulk": "query.variant == 1 && query.distance_from_camera < 3.5"
+            }
+          ]
+        },
+        "sulk": {
+          "animations": [
+            "sulk"
+          ],
+          "blend_transition": 0.5,
+          "transitions": [
+            {
+              "default": "query.variant != 1 || query.distance_from_camera > 4.5"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.friend.celebrate": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "celebrate": "query.timer_flag_1"
+            }
+          ]
+        },
+        "celebrate": {
+          "animations": [
+            "celebrate"
+          ],
+          "transitions": [
+            {
+              "default": "!query.timer_flag_1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

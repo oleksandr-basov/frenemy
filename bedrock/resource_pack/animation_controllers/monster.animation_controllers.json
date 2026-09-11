@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monster.born": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "born": "query.timer_flag_1"
+            }
+          ]
+        },
+        "born": {
+          "animations": [
+            "born"
+          ],
+          "transitions": [
+            {
+              "default": "!query.timer_flag_1"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.monster.aura": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "angry": "query.variant == 1"
+            },
+            {
+              "boiling": "query.mark_variant == 1"
+            }
+          ]
+        },
+        "boiling": {
+          "animations": [
+            "boil"
+          ],
+          "transitions": [
+            {
+              "angry": "query.variant == 1"
+            },
+            {
+              "default": "query.mark_variant != 1 && query.variant != 1"
+            }
+          ]
+        },
+        "angry": {
+          "animations": [
+            "aura",
+            "spin"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

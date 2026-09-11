@@ -1,0 +1,45 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Frenemy (вигляд)",
+    "description": "Модель, текстури та контролер відображення. Ідея: Басов Данило",
+    "uuid": "de161483-0b8e-41ad-8dd6-d48f3bab00c7",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "9c56a413-05bb-4af0-ab87-464ff417366a",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "8e2f3ff2-73f3-41d8-bded-ce38f7163c81",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "Басов Данило",
+      "Oleksandr Basov"
+    ]
+  }
+}

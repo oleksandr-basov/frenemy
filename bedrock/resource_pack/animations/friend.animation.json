@@ -1,0 +1,92 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.friend.idle": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            "variable.lean",
+            0,
+            "variable.sway"
+          ],
+          "position": [
+            0,
+            "variable.bob",
+            0
+          ],
+          "scale": [
+            "variable.breathe",
+            "variable.breathe",
+            "variable.breathe"
+          ]
+        }
+      }
+    },
+    "animation.friend.giggle": {
+      "animation_length": 4.0,
+      "sound_effects": {
+        "0.0": {
+          "effect": "giggle_sound"
+        }
+      },
+      "bones": {
+        "body": {
+          "rotation": [
+            0,
+            0,
+            "math.sin(query.anim_time * 900.0) * 12.0"
+          ],
+          "position": [
+            0,
+            "math.abs(math.sin(query.anim_time * 450.0)) * 2.0",
+            0
+          ]
+        }
+      }
+    },
+    "animation.friend.sulk": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [6, 42, 0]
+        }
+      }
+    },
+    "animation.friend.celebrate": {
+      "animation_length": 1.6,
+      "sound_effects": {
+        "0.0": {
+          "effect": "tame_song"
+        }
+      },
+      "particle_effects": {
+        "0.2": {
+          "effect": "hearts"
+        },
+        "0.9": {
+          "effect": "hearts"
+        }
+      },
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.7": [-360, 0, 0],
+            "1.6": [-360, 0, 0]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.35": [0, 6, 0],
+            "0.7": [0, 0, 0]
+          },
+          "scale": {
+            "0.7": [1, 1, 1],
+            "0.85": [1.15, 0.85, 1.15],
+            "1.0": [1, 1, 1]
+          }
+        }
+      }
+    }
+  }
+}

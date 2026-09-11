@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# build output: finished .mcaddon files and validator reports
+dist/
+out/
+bedrock/out/
+
+# Java build (when it exists)
+java/build/
+java/.gradle/
+java/run/
+
+# voice synthesis cache: regenerated from art/voices.sh in one command
+art/sfx/
+
+# IDE
+.idea/
+*.iml

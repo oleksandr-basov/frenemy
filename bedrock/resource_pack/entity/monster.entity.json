@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "frenemy:monster",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/friend_night",
+        "angry": "textures/entity/friend_angry"
+      },
+      "geometry": {
+        "default": "geometry.friend_night"
+      },
+      "particle_effects": {
+        "soul": "minecraft:sculk_soul_particle"
+      },
+      "animations": {
+        "move": "animation.monster.move",
+        "aura": "animation.monster.aura",
+        "boil": "animation.monster.boil",
+        "spin": "animation.monster.spin",
+        "aura_controller": "controller.animation.monster.aura",
+        "born": "animation.monster.born",
+        "born_controller": "controller.animation.monster.born"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.born = query.timer_flag_1;",
+          "variable.face_hurt = query.timer_flag_2;",
+          "variable.face_blink = !variable.face_hurt && (math.mod(query.life_time, 4.7) < 0.13 || math.mod(query.life_time, 7.9) < 0.13);",
+          "variable.gait = math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed * 45.0;",
+          "variable.hit = math.sin(math.clamp(variable.attack_time ?? -1.0, 0.0, 1.0) * 180.0);",
+          "variable.arm_left = variable.hit > 0.01 ? 110.0 * variable.hit : variable.gait;",
+          "variable.arm_right = variable.hit > 0.01 ? 110.0 * variable.hit : -variable.gait;",
+          "variable.head_nod = 12.0 * variable.hit + (query.variant == 1 ? math.sin(query.life_time * 620) * 1.6 : 0.0);"
+        ],
+        "animate": [
+          "move",
+          "aura_controller",
+          "born_controller"
+        ],
+        "should_update_effects_offscreen": "1.0"
+      },
+      "render_controllers": [
+        "controller.render.monster",
+        "controller.render.monster_face"
+      ]
+    }
+  }
+}

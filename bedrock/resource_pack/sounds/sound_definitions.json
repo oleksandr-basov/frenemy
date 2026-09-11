@@ -1,0 +1,223 @@
+{
+  "format_version": "1.20.20",
+  "sound_definitions": {
+    "friend.hello": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.hello",
+      "sounds": [
+        {
+          "name": "sounds/friend/hello1",
+          "volume": 0.9
+        },
+        {
+          "name": "sounds/friend/hello2",
+          "volume": 0.9
+        },
+        {
+          "name": "sounds/friend/hello3",
+          "volume": 0.9
+        },
+        {
+          "name": "sounds/friend/theme",
+          "volume": 0.75
+        }
+      ]
+    },
+    "friend.tame": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.tame",
+      "sounds": [
+        {
+          "name": "sounds/friend/tame1",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.ouch": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.ouch",
+      "sounds": [
+        {
+          "name": "sounds/friend/ouch1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/ouch2",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.dark": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.dark",
+      "sounds": [
+        {
+          "name": "sounds/friend/dark1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/dark2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/dark3",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/theme_dark",
+          "volume": 0.8
+        }
+      ]
+    },
+    "friend.transform_rise": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.transform_rise",
+      "sounds": [
+        {
+          "name": "sounds/friend/transform_rise",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.transform": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.transform",
+      "sounds": [
+        {
+          "name": "sounds/friend/transform_boom",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.transform_calm": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.transform_calm",
+      "sounds": [
+        {
+          "name": "sounds/friend/transform_calm",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.boop": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.boop",
+      "sounds": [
+        {
+          "name": "sounds/friend/boop1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/boop2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/friend/boop3",
+          "volume": 1.0
+        }
+      ]
+    },
+    "friend.giggle": {
+      "category": "neutral",
+      "subtitle": "subtitles.entity.friend.giggle",
+      "sounds": [
+        {
+          "name": "sounds/friend/giggle",
+          "volume": 1.0
+        }
+      ]
+    },
+    "monster.calm": {
+      "category": "hostile",
+      "subtitle": "subtitles.entity.monster.calm",
+      "sounds": [
+        {
+          "name": "sounds/monster/calm1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/calm2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/calm3",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/theme_calm",
+          "volume": 0.8
+        },
+        {
+          "name": "sounds/monster/inner1",
+          "volume": 0.55
+        },
+        {
+          "name": "sounds/monster/inner2",
+          "volume": 0.55
+        }
+      ]
+    },
+    "monster.rage": {
+      "category": "hostile",
+      "subtitle": "subtitles.entity.monster.rage",
+      "sounds": [
+        {
+          "name": "sounds/monster/rage1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/rage2",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/rage3",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/rage4",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/rage5",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/theme_rage",
+          "volume": 0.9
+        }
+      ]
+    },
+    "shade.whisper": {
+      "category": "hostile",
+      "subtitle": "subtitles.entity.shade.whisper",
+      "sounds": [
+        {
+          "name": "sounds/monster/shade1",
+          "volume": 0.9
+        },
+        {
+          "name": "sounds/monster/shade2",
+          "volume": 0.9
+        },
+        {
+          "name": "sounds/monster/shade3",
+          "volume": 0.9
+        }
+      ]
+    },
+    "monster.ouch": {
+      "category": "hostile",
+      "subtitle": "subtitles.entity.monster.ouch",
+      "sounds": [
+        {
+          "name": "sounds/monster/mouch1",
+          "volume": 1.0
+        },
+        {
+          "name": "sounds/monster/mouch2",
+          "volume": 1.0
+        }
+      ]
+    }
+  }
+}
